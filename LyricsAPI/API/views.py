@@ -10,7 +10,6 @@ class Home(APIView):
             return Response({'error': 'Please provide a song name'}, status=400)
         if not song:
             return Response({'error': 'Please provide a song name'}, status=400)
-        
         try:
             lyrics_instance = Lyrics(song)
             song_info = {
