@@ -1,12 +1,13 @@
 # Django settings for LyricsAPI project.
 
 from pathlib import Path
+import os
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = 'django-insecure-naf1a#iv)2atjsw6!xz8y61$sswq5!-q4o#x0t$=@-(4$%^j%x'
 
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['*']
 
@@ -58,8 +59,12 @@ WSGI_APPLICATION = 'LyricsAPI.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'railway',
+        'USER': 'postgres',
+        'PASSWORD': 'AKWKmiJglrmxDdNLZAcRQXkecAUcrrwF',
+        'HOST': 'roundhouse.proxy.rlwy.net',
+        'PORT': '19395',
     }
 }
 
@@ -89,5 +94,6 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 STATIC_ROOT = BASE_DIR / "staticfiles"
-
+STATICFILES_DIRS = os.path.join(BASE_DIR, 'static'),
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles_build', 'static')
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
