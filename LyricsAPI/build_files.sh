@@ -1,6 +1,2 @@
-apt install python3
-pip install django
-pip install django-rest-framework
-pip install lyricsgenius
-pip install whitenoise
+pip install -r requirements.txt
 python3.9 manage.py collectstatic
