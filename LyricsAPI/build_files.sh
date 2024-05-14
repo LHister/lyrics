@@ -1,4 +1,4 @@
-python --version
+apt install python3
 pip install django
 pip install django-rest-framework
 pip install lyricsgenius
