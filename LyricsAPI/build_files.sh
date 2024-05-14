@@ -1,3 +1,4 @@
+python --version
 pip install django
 pip install django-rest-framework
 pip install lyricsgenius
